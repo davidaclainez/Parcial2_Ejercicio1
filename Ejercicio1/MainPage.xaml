@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ejercicio1.MainPage">
+    <StackLayout>
+        <Picker Title="Seleccione la región" x:Name="cboRegion" SelectedIndexChanged="btnRefresh_Clicked">
+            <Picker.Items>
+                <x:String>Africa</x:String>
+                <x:String>Americas</x:String>
+                <x:String>Asia</x:String>
+                <x:String>Europe</x:String>
+                <x:String>Oceania</x:String>
+
+            </Picker.Items>
+        </Picker>
+        <ListView x:Name="listCountries" ItemTapped="listCountries_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding alpha2Code}" Detail="{Binding name}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
